@@ -15,12 +15,16 @@ public abstract class AbstractFirebaseFragment extends Fragment {
 
     protected FirebaseAuth firebaseAuth;
 
+    protected DatabaseReference firebaseDatabase;
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         // Initialize Firebase Auth
         firebaseAuth = FirebaseAuth.getInstance();
+
+        firebaseDatabase = FirebaseDatabase.getInstance().getReference();
     }
 
     public void onUserUpdated(FirebaseUser user) {

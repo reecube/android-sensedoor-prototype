@@ -23,8 +23,11 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_dashboard:
                     mTextMessage.setText(R.string.title_dashboard);
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_matrix:
+                    mTextMessage.setText(R.string.title_matrix);
+                    return true;
+                case R.id.navigation_joystick:
+                    mTextMessage.setText(R.string.title_joystick);
                     return true;
             }
             return false;

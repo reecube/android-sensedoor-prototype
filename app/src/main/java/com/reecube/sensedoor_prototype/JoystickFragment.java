@@ -9,15 +9,6 @@ import android.view.ViewGroup;
 
 public class JoystickFragment extends Fragment {
 
-    public JoystickFragment() {
-        // Required empty public constructor
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -61,12 +61,12 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = getSupportActionBar();
 
-        fragments = new Fragment[]{
-                new HomeFragment(),
-                new DashboardFragment(),
-                new MatrixFragment(),
-                new JoystickFragment(),
-        };
+        fragments = new Fragment[4];
+
+        fragments[FRAGMENT_HOME] = new HomeFragment();
+        fragments[FRAGMENT_DASHBOARD] = new DashboardFragment();
+        fragments[FRAGMENT_JOYSTICK] = new JoystickFragment();
+        fragments[FRAGMENT_MATRIX] = new MatrixFragment();
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

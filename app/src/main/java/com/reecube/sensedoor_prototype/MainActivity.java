@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -19,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActionBar toolbar;
 
-    private Fragment[] fragments;
+    private AbstractFirebaseFragment[] fragments;
 
     private FirebaseAuth mAuth;
 
@@ -84,11 +83,11 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == RC_SIGN_IN) {
             if (resultCode == RESULT_OK) {
                 // Sign in succeeded
-                updateUI(mAuth.getCurrentUser());
+                onUserUpdated(mAuth.getCurrentUser());
             } else {
                 // Sign in failed
                 Toast.makeText(this, "Sign In Failed", Toast.LENGTH_SHORT).show();
-                updateUI(null);
+                onUserUpdated(null);
             }
         }
     }
@@ -103,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        fragments = new Fragment[4];
+        fragments = new AbstractFirebaseFragment[4];
 
         fragments[FRAGMENT_HOME] = new HomeFragment();
         fragments[FRAGMENT_DASHBOARD] = new DashboardFragment();
@@ -122,21 +121,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        updateUI(mAuth.getCurrentUser());
+        onUserUpdated(mAuth.getCurrentUser());
     }
 
-    private void updateUI(FirebaseUser user) {
-        if (user != null) {
-
-            // TODO: implement this
-        } else {
-
+    private void onUserUpdated(FirebaseUser user) {
+        if (user == null) {
             startSignIn();
+
+            return;
+        }
+
+        for (AbstractFirebaseFragment fragment:fragments) {
+            fragment.onUserUpdated(user);
         }
     }
 
+    /**
+     * TODO: implement this
+     */
     private void signOut() {
         AuthUI.getInstance().signOut(this);
-        updateUI(null);
+        onUserUpdated(null);
     }
 }

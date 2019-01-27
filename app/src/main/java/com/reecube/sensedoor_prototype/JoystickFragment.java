@@ -2,12 +2,11 @@ package com.reecube.sensedoor_prototype;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class JoystickFragment extends Fragment {
+public class JoystickFragment extends AbstractFirebaseFragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,

@@ -4,4 +4,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_joystick">Joystick</string>
     <string name="title_matrix">Matrix</string>
+    <string name="joystick_left">Joystick Left</string>
+    <string name="joystick_up">Joystick Up</string>
+    <string name="joystick_right">Joystick Right</string>
+    <string name="joystick_down">Joystick Down</string>
+    <string name="joystick_center">Joystick Center</string>
 </resources>

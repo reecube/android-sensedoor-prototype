@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:columnCount="5"
+    android:rowCount="5"
     tools:context=".JoystickFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="TODO: JOYSTICK" />
+    <Space
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        />
 
-</FrameLayout>
+    <Space
+        android:layout_row="4"
+        android:layout_column="4"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        />
+
+    <ImageView
+        android:id="@+id/joystickLeft"
+        android:layout_row="2"
+        android:layout_column="1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_joystick_left_0"
+        android:contentDescription="@string/joystick_left" />
+
+    <ImageView
+        android:id="@+id/joystickUp"
+        android:layout_row="1"
+        android:layout_column="2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_joystick_up_0"
+        android:contentDescription="@string/joystick_up" />
+
+    <ImageView
+        android:id="@+id/joystickRight"
+        android:layout_row="2"
+        android:layout_column="3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_joystick_right_0"
+        android:contentDescription="@string/joystick_right" />
+
+    <ImageView
+        android:id="@+id/joystickDown"
+        android:layout_row="3"
+        android:layout_column="2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_joystick_down_0"
+        android:contentDescription="@string/joystick_down" />
+
+    <ImageView
+        android:id="@+id/joystickCenter"
+        android:layout_row="2"
+        android:layout_column="2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_joystick_center_0"
+        android:contentDescription="@string/joystick_center" />
+</GridLayout>
